@@ -21,16 +21,16 @@ subplot(414); plot(t,sig2.*sig,'rx','LineWidth',2,'MarkerSize',1); ylabel('Ampli
 
 
 
-[h, w] = freqz (sig, 1, [], SR);
-[h2, w2] = freqz (sig2, 1, [], SR);
-[hm, wm] = freqz (sig.*sig2, 1, [], SR);
+h = fft (sig);
+h2 = fft (sig2);
+hm = fft (sig.*sig2);
 
 figure;
-subplot(231); plot(w/pi,abs(h));
-subplot(234); plot(w/pi, angle(h));
+subplot(231); plot(abs(h));
+subplot(234); plot(angle(h));
 
-subplot(232); plot(w2/pi,abs(h2));
-subplot(235); plot(w2/pi, angle(h2));
+subplot(232); plot(abs(h2));
+subplot(235); plot(angle(h2));
 
-subplot(233); plot(wm/pi,abs(hm));
-subplot(236); plot(wm/pi, angle(hm));
+subplot(233); plot(abs(hm));
+subplot(236); plot(angle(hm));

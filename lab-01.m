@@ -53,7 +53,7 @@ sig_ideal = interp(sig,mult);
 
 % select filter for interpolation
 kern=bk; % bk || b
-kern= blackman(512);
+%kern= blackman(512);
 
 % convolve filter & signal
 sig2  =conv(kern,upsample(sig,mult));
